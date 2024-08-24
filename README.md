@@ -13,10 +13,19 @@ This project implements a contextual search tool that leverages a pre-trained Di
 │   ├── embedding_model.py
 │   ├── search_tool.py
 │   └── utils.py
+│ 
+├── Finetuned-DistilBert/
+│   ├── config.json
+│   ├── special_tokens_map.json
+│   ├── tokenizer_config.json
+│   ├── vocab.txt
+│   └── model.safetensors
+│ 
 ├── README.md
 ├── requirements.txt
 └── examples/
     ├── Tenet.txt
+    ├── Contextual_Search_Tool.ipynb
     └── Scene_contextual_search.png
 ```
 

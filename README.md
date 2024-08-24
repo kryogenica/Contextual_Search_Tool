@@ -60,7 +60,7 @@ from scripts.embedding_model import EmbeddingModel
 from scripts.search_tool import SearchTool
 
 # Load and process the script
-with open('movie_script.txt', 'r') as file:
+with open('examples/Tenet.txt', 'r') as file:
     script_lines = file.readlines()
 
 scene_extractor = SceneExtractor(script_lines)

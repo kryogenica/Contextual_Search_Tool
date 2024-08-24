@@ -1,0 +1,5 @@
+# PLACE_HOLDER_FILE.txt
+
+The file you are looking for (model.safetensors) is too large to store on GitHub. 
+Please download it from the following Google Drive link: 
+https://drive.google.com/file/d/1--aPR67KuQffBY9PAgSAuvKGTklf6V9t/view?usp=drive_link

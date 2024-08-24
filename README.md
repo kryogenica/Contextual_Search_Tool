@@ -12,10 +12,11 @@ This project implements a contextual search tool that leverages a pre-trained Di
 │   ├── scene_extractor.py
 │   ├── embedding_model.py
 │   ├── search_tool.py
-│   ├── utils.py
+│   └── utils.py
 ├── README.md
 ├── requirements.txt
 └── examples/
+    ├── Tenet.txt
     └── Scene_contextual_search.png
 ```
 

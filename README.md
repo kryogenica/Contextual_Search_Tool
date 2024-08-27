@@ -25,6 +25,8 @@ This project implements a contextual search tool that leverages a pre-trained Di
 ├── requirements.txt
 └── examples/
     ├── Tenet.txt
+    ├── Tenet_embeddings.pkl
+    ├── Testing_scripts.ipynb
     ├── Contextual_Search_Tool.ipynb
     └── Scene_contextual_search.png
 ```
@@ -69,9 +71,8 @@ from scripts.scene_extractor import SceneExtractor
 from scripts.embedding_model import EmbeddingModel
 from scripts.search_tool import SearchTool
 
-# Load and process the script
-with open('examples/Tenet.txt', 'r') as file:
-    script_lines = file.readlines()
+# Load and process the script by breaking it down into separate scenes
+scenes = SceneExtractor('examples/Tenet.txt')
 
 scene_extractor = SceneExtractor(script_lines)
 scenes = scene_extractor.extract_scenes_from_script()
@@ -80,13 +81,25 @@ scenes = scene_extractor.extract_scenes_from_script()
 embedding_model = EmbeddingModel()
 search_tool = SearchTool(embedding_model)
 
-# Embed scenes and search for similar scenes
-search_tool.embed_scenes_and_dialogues(scenes)
-results = search_tool.search_dialogue("A young man chambers a round, then opens his eyes...")
+# Embed action and dialogue of scenes
+search_tool.embed_actions_and_dialogues(scenes)
 
-# Print results
-for scene_id, similarity in results:
-    print(f"Scene {scene_id}: Similarity: {similarity}")
+# Search for similar action and dialogue based off query text
+action_results = search_tool.search_actions("The Protagonist cleans himself and steps towards a car.", scenes, embedding_type='mean')
+dialogoue_results = search_tool.search_dialogue("I have two minutes. Make up your mind.", scenes, embedding_type='mean')
+
+# Print (df) top 5 most similar results to query text
+action_results
+dialogoue_results
+
+# Save embeddings, transformer model name and movie script location
+search_tool.save_embeddings('examples/Tenet_embeddings.pkl')
+
+#Load saved embedding and setup tokenizer model
+from scripts.search_tool import SearchTool
+new_search_tool = SearchTool(embedding_model=None)
+new_search_tool.load_embeddings('examples/Tenet_embeddings.pkl')
+
 ```
 
 ## License

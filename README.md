@@ -1,7 +1,9 @@
 
 # Contextual Search Tool
 
-This project implements a contextual search tool that leverages a pre-trained DistilBERT model for embedding and searching within movie scripts based on action and dialogue. The system is capable of fine-tuning the BERT model to improve search performance based on specific scenes and actions within a movie.
+Ever found yourself vaguely recalling a piece of text from a document but struggling to find it through traditional keyword searches? Imagine a tool where you can describe what you remember (a brief description, summary, or paraphrase) and instantly retrieve the most relevant pieces of text. That's exactly what this project does!
+
+Particularly this project implements a contextual search tool that leverages a pre-trained DistilBERT model for embedding and searching within movie scripts based on action and dialogue. The system is capable of fine-tuning the BERT model to improve search performance based on specific scenes and actions within a movie.
 
 ## Project Structure
 
